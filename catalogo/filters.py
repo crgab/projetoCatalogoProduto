@@ -3,7 +3,7 @@ from catalogo.models import Produto, Fornecedor, ProdutoFornecedor, Categoria
 
 class ProdutoFilter(django_filters.FilterSet):
     descricao = django_filters.CharFilter(lookup_expr='icontains')
-    categoria = django_filters.CharFilter(lookup_expr='icontains')
+    categoria = django_filters.NumberFilter(field_name='categoria__id')
     marca = django_filters.CharFilter(lookup_expr='icontains')
     preco = django_filters.CharFilter(lookup_expr='exact')
 
